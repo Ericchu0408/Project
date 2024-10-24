@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             x:Class="SafeDriver.Settings"
+             Title="設定"
+             Background="#FEFEFE">
+    <VerticalStackLayout>
+        <Label Text="     " FontSize="Medium" />
+
+        <HorizontalStackLayout Margin="0,-14,16,0">
+            <Frame HeightRequest="65" WidthRequest="360" Margin="16,16,16,0" BackgroundColor="#E9ECF1"  >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="   辨識系統" VerticalOptions="Center" Margin="0,-5,0,0" FontSize="Large"/>
+
+                    <ImageButton Source="arrow.png" Margin="280,0,0,0" HeightRequest="26" WidthRequest="26" x:Name="ArrowIdentificationImageButton" Clicked="OnArrowIdentificationSwitchButtonClicked" />
+                </Grid>
+            </Frame>
+        </HorizontalStackLayout>
+
+
+        <HorizontalStackLayout Margin="0,-16,16,0">
+            <Frame HeightRequest="65" WidthRequest="360" Margin="16,16,16,0" BackgroundColor="#E9ECF1"  >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="   帳號安全" VerticalOptions="Center" Margin="0,-5,0,0" FontSize="Large"/>
+                    
+                    <ImageButton Source="arrow.png" Margin="280,0,0,0" HeightRequest="26" WidthRequest="26" x:Name="ArrowAccountSafetyImageButton" Clicked="OnArrowAccountSafetyButtonClicked" />
+                </Grid>
+            </Frame>
+        </HorizontalStackLayout>
+        
+        
+        
+        
+
+        <HorizontalStackLayout Margin="0,-15,16,0">
+
+            <Frame HeightRequest="65" WidthRequest="360" Margin="16,16,16,0" BackgroundColor="#E9ECF1"  >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="   通知設定" VerticalOptions="Center" Margin="0,-5,0,0" FontSize="Large" />
+                    <ImageButton Source="arrow.png" Margin="280,0,0,0" HeightRequest="26"  WidthRequest="26" x:Name="ArrowNotificationImageButton" Clicked="OnArrowNotificationButtonClicked" />
+                </Grid>
+            </Frame>
+        </HorizontalStackLayout>
+
+        
+
+        <HorizontalStackLayout>
+            <Frame HeightRequest="65" WidthRequest="360" Margin="16,0,0,0" BackgroundColor="#E9ECF1"  >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="   語言" VerticalOptions="Center" Margin="0,-5,0,0" FontSize="Large"/>
+                    <ImageButton Source="arrow.png" Margin="280,0,0,0" HeightRequest="26" WidthRequest="26" x:Name="ArrowLanguageImageButton" Clicked="OnArrowLanguageButtonClicked" />
+                </Grid>
+            </Frame>
+        </HorizontalStackLayout>
+
+
+
+        <HorizontalStackLayout Margin="0,-16,16,0">
+            <Frame HeightRequest="65" WidthRequest="360" Margin="16,16,16,0" BackgroundColor="#E9ECF1"  >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="   FAQ" VerticalOptions="Center" Margin="0,-5,0,0" FontSize="Large"/>
+                    <ImageButton Source="arrow.png" Margin="280,0,0,0" HeightRequest="26" WidthRequest="26" x:Name="ArrowFAQImageButton" Clicked="OnArrowFAQButtonClicked" />
+                </Grid>
+            </Frame>
+        </HorizontalStackLayout>
+        
+        <HorizontalStackLayout>
+            <Frame HeightRequest="65" WidthRequest="360" Margin="16,0,0,0" BackgroundColor="#E9ECF1"  >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="   意見回饋" VerticalOptions="Center" Margin="0,-5,0,0" FontSize="Large"/>
+                    <ImageButton Source="arrow.png" Margin="280,0,0,0" HeightRequest="26" WidthRequest="26" x:Name="ArrowFeedBackImageButton" Clicked="OnArrowFeedBackButtonClicked" />
+                </Grid>
+            </Frame>
+         </HorizontalStackLayout>
+        
+        <HorizontalStackLayout>
+            <Frame HeightRequest="65" WidthRequest="360" Margin="16,0,0,0" BackgroundColor="#E9ECF1"  >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="   聯絡我們" VerticalOptions="Center" Margin="0,-5,0,0" FontSize="Large"/>
+                    <ImageButton Source="arrow.png" Margin="280,0,0,0" HeightRequest="26" WidthRequest="26" x:Name="ArrowConnectionImageButton" Clicked="OnArrowConnectionButtonClicked" />
+                </Grid>
+            </Frame>
+        </HorizontalStackLayout>
+        
+        <BoxView Color="Gray" Margin="49.5,354.5,0,0" HeightRequest="1" HorizontalOptions="Start" WidthRequest="335.5" />
+        <BoxView Color="Gray" Margin="46.5,610.5,0,0" HeightRequest="1" HorizontalOptions="Start" WidthRequest="335.5" />
+        <BoxView Color="Gray" Margin="48,426,0,0" HeightRequest="1" HorizontalOptions="Start" WidthRequest="335.5" />
+        <BoxView Color="Gray" Margin="45,682,0,0" HeightRequest="1" HorizontalOptions="Start" WidthRequest="335.5" />
+    </VerticalStackLayout>
+</ContentPage>

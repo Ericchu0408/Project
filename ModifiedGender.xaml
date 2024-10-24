@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SafeDriver.ModifiedGender"
+             Title="性別修改"
+             Background="#FEFEFE">
+
+    <VerticalStackLayout Padding="20">
+        <Label Text="請選擇性別" FontSize="Medium" />
+        <Picker x:Name="GenderPicker" Title="性別">
+            <!-- 性別選項將在代碼後置中添加 -->
+        </Picker>
+        <Label x:Name="SelectedGenderLabel" Text="選擇的性別：" FontSize="Medium" />
+        <Button Text="保存"
+                Clicked="OnSaveClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

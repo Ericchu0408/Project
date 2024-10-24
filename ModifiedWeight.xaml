@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SafeDriver.ModifiedWeight"
+             Title="體重設定"
+             Background="#FEFEFE">
+    <VerticalStackLayout>
+
+        <Label Text=""/>
+        <Label Text=""/>
+        <Frame BackgroundColor="#E9ECF1" Margin="0,0,0,0" WidthRequest="360">
+            <Editor x:Name="descriptionEditor" Placeholder="請輸入體重"  />
+        </Frame>
+        <Label Text=""/>
+        <Label Text=""/>
+        <Button Text="儲存" WidthRequest="360" />
+    </VerticalStackLayout>
+</ContentPage>

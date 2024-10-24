@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SafeDriver.IdentificationSettings"
+             Title="IdentificationSettings">
+    <VerticalStackLayout>
+        <HorizontalStackLayout Spacing="10">
+            <Label Text="      辨識系統" VerticalOptions="Center"  FontSize="Medium"/>
+            <Switch x:Name="recognitionSwitch" IsToggled="False" Toggled="OnRecognitionSwitchToggled" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

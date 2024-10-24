@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SafeDriver.ModifiedAge"
+             Title="修改年齡"
+             Background="#FEFEFE">
+
+    <VerticalStackLayout Padding="20">
+        <Label Text="請選擇年齡" FontSize="Medium" />
+        <Picker x:Name="AgePicker" Title="年齡">
+            <!-- 年齡選項將在代碼後置中添加 -->
+        </Picker>
+        <Label x:Name="SelectedAgeLabel" Text="選擇的年齡：" FontSize="Medium" />
+        <Button Text="保存"
+                Clicked="OnSaveClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
