@@ -12,7 +12,7 @@ import requests
 import base64
 
 # 全局变量来存储时间
-URL="http://172.20.10.3/DrowsyDrivingService/DDService.ashx?Action="
+URL=f"http://192.168.1.132/DrowsyDrivingService/DDService.ashx?Action="
 elapsed_time_str = ""
 hour = 0
 minute = 0
@@ -33,7 +33,8 @@ def toBase64(response):
     return encoded_string.decode()
 
 def checkWeb(base64_encoded_string):
-    url = URL+"{base64_encoded_string}"#改IP
+    global URL
+    url = URL+f"{base64_encoded_string}"#改IP
     response = requests.get(url)
     return response
 
@@ -150,6 +151,7 @@ def process_video_stream(vs, detector, predictor, lStart, lEnd, rStart, rEnd, mS
     cv2.destroyAllWindows()
 
 def check_detect_flag():
+    global URL
     requestData = {
         "MethodName": "GetDetectFlag"
     }
