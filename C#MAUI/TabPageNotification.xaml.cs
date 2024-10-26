@@ -62,9 +62,8 @@ public partial class TabPageNotification : ContentPage
         // 對 Base64 字串進行 URL 編碼
         string urlSafeBase64String = Uri.EscapeDataString(base64String);
 
-        MainPage mainPage = new MainPage();
         // 定義 URL
-        string url =mainPage.URL + $"{urlSafeBase64String}";
+        string url =MainPage.URL + $"{urlSafeBase64String}";
 
         using (HttpClient client = new HttpClient())
         {

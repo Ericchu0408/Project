@@ -8,5 +8,9 @@
         {
             InitializeComponent();
         }
+        ~AppShell()
+        {
+
+        }
     }
 }

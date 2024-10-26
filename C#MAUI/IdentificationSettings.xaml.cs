@@ -12,11 +12,12 @@ public partial class IdentificationSettings : ContentPage
     public IdentificationSettings()
     {
         InitializeComponent(); // 初始化元件
-        CheckDetectFlag();     // 初始化元件後再呼叫 CheckDetectFlag
-
+        //CheckDetectFlag();     // 初始化元件後再呼叫 CheckDetectFlag          
+        recognitionSwitch.IsToggled = false; //這一行是不管Server的狀態為何,一開始一律都是False,代表每次都必須由使用者自行開啟 
+        
     }
 
-    private async void OnRecognitionSwitchToggled(object sender, ToggledEventArgs e)
+    private async Task SetDetectData(bool isActive)
     {
         try
         {
@@ -29,7 +30,7 @@ public partial class IdentificationSettings : ContentPage
             var jsonObj = new
             {
                 MethodName = "SetDetectFlag",
-                DetectFlag = e.Value.ToString()
+                DetectFlag = isActive// e.Value.ToString()
             };
 
             // 將 JSON 物件序列化為字串
@@ -39,8 +40,7 @@ public partial class IdentificationSettings : ContentPage
             string base64String = Convert.ToBase64String(Encoding.UTF8.GetBytes(jsonString));
 
             // 定義 URL
-            MainPage mainpage = new MainPage();
-            string url = mainpage.URL+$"{base64String}";//改IP
+            string url = MainPage.URL + $"{base64String}";//改IP
 
             //Console.WriteLine(base64String);
 
@@ -54,7 +54,7 @@ public partial class IdentificationSettings : ContentPage
                     // 取得回應內容
                     string responseContent = await response.Content.ReadAsStringAsync();
 
-                    AppState.IsRecognitionSwitchOn = e.Value; // 設置全域變數
+                    AppState.IsRecognitionSwitchOn = isActive;// e.Value; // 設置全域變數
                     // 處理成功
                     //await DisplayAlert("Success", $"Detection flag set to {e.Value.ToString().ToUpper()}.", "OK");
                 }
@@ -76,6 +76,11 @@ public partial class IdentificationSettings : ContentPage
             // 處理其他錯誤
             await DisplayAlert("Error", $"An unexpected error occurred: {ex.Message}", "OK");
         }
+    }
+
+    private async void OnRecognitionSwitchToggled(object sender, ToggledEventArgs e)
+    {
+        await SetDetectData(e.Value);
     }
 
     private async void CheckDetectFlag()
@@ -100,8 +105,7 @@ public partial class IdentificationSettings : ContentPage
             string base64String = Convert.ToBase64String(Encoding.UTF8.GetBytes(jsonString));
 
             // 定義 URL
-            MainPage mainpage = new MainPage();
-            string url = mainpage.URL+$"{base64String}";//改IP
+            string url = MainPage.URL + $"{base64String}";//改IP
 
             //Console.WriteLine(base64String);
 
