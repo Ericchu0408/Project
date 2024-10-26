@@ -23,22 +23,23 @@
 
         <!-- 標題 -->
         <Label Text="選擇語言"
-          FontSize="30" Margin="16" FontAttributes="Bold" />
+          FontSize="22" Margin="16" FontAttributes="Bold" />
 
         <!-- 語言選擇 -->
         <Frame BackgroundColor="#E9ECF1" 
            CornerRadius="12"
-           Padding="10"
+           Padding="0"
            HasShadow="True"
            HorizontalOptions="FillAndExpand">
 
-            <HorizontalStackLayout Spacing="175" Padding="10,0">
+            <HorizontalStackLayout Spacing="180" Padding="10">
 
                 <!-- 語言名稱 -->
                 <Label Text="繁體中文" 
                     FontAttributes="Bold"
-                    FontSize="Large"  
+                    FontSize="18"  
                     VerticalOptions="Center"
+                    Margin="10"
                     HorizontalOptions="StartAndExpand" />
 
                 <!-- 語言選擇 CheckBox -->

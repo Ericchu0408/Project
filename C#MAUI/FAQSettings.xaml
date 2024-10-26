@@ -21,12 +21,12 @@
 
     <VerticalStackLayout>
 
-        <Label Text="常見問題" FontSize="15" Margin="16" FontAttributes="Bold"/>
+        <Label Text="常見問題" FontSize="23" Margin="10" FontAttributes="Bold"/>
 
         <!-- 問題 1 -->
         <Frame BackgroundColor="#E9ECF1"
                CornerRadius="12"
-               Padding="15"
+               Padding="10"
                HasShadow="True">
             <VerticalStackLayout Spacing="5">
                 <Label Text="無法登入裝置"
@@ -42,45 +42,9 @@
 
         <Label HeightRequest="15" />
 
+        
+
         <!-- 問題 2 -->
-        <Frame BackgroundColor="#E9ECF1"
-               CornerRadius="12"
-               Padding="15"
-               HasShadow="True">
-            <VerticalStackLayout Spacing="5">
-                <Label Text="無法登入"
-                       FontSize="Medium"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Start" />
-
-                <Label Text="請確認您輸入的帳號和密碼是否正確。若您忘記密碼，可以使用『忘記密碼』功能來重設。"
-                       FontSize="Small"
-                       HorizontalOptions="Start" />
-            </VerticalStackLayout>
-        </Frame>
-
-        <Label HeightRequest="15" />
-
-        <!-- 問題 3 -->
-        <Frame BackgroundColor="#E9ECF1"
-               CornerRadius="12"
-               Padding="15"
-               HasShadow="True">
-            <VerticalStackLayout Spacing="5">
-                <Label Text="如何重置密碼？"
-                       FontSize="Medium"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Start" />
-
-                <Label Text="如需重置密碼，請透過客服信箱或電話聯繫我們的客服團隊。    "
-                       FontSize="Small"
-                       HorizontalOptions="Start" />
-            </VerticalStackLayout>
-        </Frame>
-
-        <Label HeightRequest="15" />
-
-        <!-- 問題 4 -->
         <Frame BackgroundColor="#E9ECF1"
                CornerRadius="12"
                Padding="15"
@@ -99,7 +63,7 @@
 
         <Label HeightRequest="15" />
 
-        <!-- 問題 5 -->
+        <!-- 問題 3 -->
         <Frame BackgroundColor="#E9ECF1"
                CornerRadius="12"
                Padding="15"

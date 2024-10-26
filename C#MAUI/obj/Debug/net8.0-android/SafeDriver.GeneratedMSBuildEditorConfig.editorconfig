@@ -58,6 +58,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = SafeDriver.FeedBackSetting
 build_metadata.AdditionalFiles.TargetPath = FeedBackSettings.xaml
 build_metadata.AdditionalFiles.RelativePath = FeedBackSettings.xaml
 
+[C:/Users/ericc/source/repos/SafeDriver20240819/FrameSection.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SafeDriver.FrameSection.xaml
+build_metadata.AdditionalFiles.TargetPath = FrameSection.xaml
+build_metadata.AdditionalFiles.RelativePath = FrameSection.xaml
+
 [C:/Users/ericc/source/repos/SafeDriver20240819/IdentificationSettings.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SafeDriver.IdentificationSettings.xaml
@@ -75,36 +81,6 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SafeDriver.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
-
-[C:/Users/ericc/source/repos/SafeDriver20240819/ModifiedAge.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SafeDriver.ModifiedAge.xaml
-build_metadata.AdditionalFiles.TargetPath = ModifiedAge.xaml
-build_metadata.AdditionalFiles.RelativePath = ModifiedAge.xaml
-
-[C:/Users/ericc/source/repos/SafeDriver20240819/ModifiedGender.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SafeDriver.ModifiedGender.xaml
-build_metadata.AdditionalFiles.TargetPath = ModifiedGender.xaml
-build_metadata.AdditionalFiles.RelativePath = ModifiedGender.xaml
-
-[C:/Users/ericc/source/repos/SafeDriver20240819/ModifiedHeight.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SafeDriver.ModifiedHeight.xaml
-build_metadata.AdditionalFiles.TargetPath = ModifiedHeight.xaml
-build_metadata.AdditionalFiles.RelativePath = ModifiedHeight.xaml
-
-[C:/Users/ericc/source/repos/SafeDriver20240819/ModifiedName.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SafeDriver.ModifiedName.xaml
-build_metadata.AdditionalFiles.TargetPath = ModifiedName.xaml
-build_metadata.AdditionalFiles.RelativePath = ModifiedName.xaml
-
-[C:/Users/ericc/source/repos/SafeDriver20240819/ModifiedWeight.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SafeDriver.ModifiedWeight.xaml
-build_metadata.AdditionalFiles.TargetPath = ModifiedWeight.xaml
-build_metadata.AdditionalFiles.RelativePath = ModifiedWeight.xaml
 
 [C:/Users/ericc/source/repos/SafeDriver20240819/NotificationSettings.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

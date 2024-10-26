@@ -4,15 +4,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SafeDriver.TabPageNotification"
              Title="通知"
-             Background="#FEFEFE"
+             BackgroundColor="#F5F5F5"  
+             Padding="5"
              >
+
+    <Shell.TitleView>
+
+        <Label Text="疲勞通知"
+               FontSize="24"  
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Margin="-20,0,0,0"
+               Padding="0,10,0,0"
+               TextColor="Black" />
+
+    </Shell.TitleView>
+    
     <VerticalStackLayout>
         <HorizontalStackLayout Margin="16,16,16,0">
             
             <ImageButton Source="settings.png" HeightRequest="45" WidthRequest="45" x:Name="SettingImageButton" Clicked="OnSettingsButtonClicked" />
-            <Label Text="                                            " FontSize="18" VerticalOptions="Center" Margin="16,0,0,0" />
-            <!--<Button Text="全部已讀"/>-->
-
+            <Label Text=" " FontSize="18" VerticalOptions="Center" Margin="16,0,0,0" />
         </HorizontalStackLayout>
 
         

@@ -1,4 +1,6 @@
-﻿namespace SafeDriver;
+﻿using Android.OS;
+
+namespace SafeDriver;
 
 public partial class AccountSafetySettings : ContentPage
 {
@@ -13,6 +15,8 @@ public partial class AccountSafetySettings : ContentPage
         MainPage.URL = $"http://{SeverPlace.Text}/DrowsyDrivingService/DDService.ashx?Action=";
         await WriteToFileAsync(SeverPlace.Text);
         MainPage mainPage = new MainPage();
+        // 顯示成功訊息
+        await DisplayAlert("通知", "設置成功", "確定");
 
     }
 
