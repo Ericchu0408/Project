@@ -312,7 +312,7 @@ namespace SafeDriver
                         GarminData jsonObject = JsonConvert.DeserializeObject<GarminData>(json);
                         // 檢查 OverallSleepScore
                         if (string.IsNullOrEmpty(jsonObject.OverallSleepScore))
-                            OverallSleepScore.Text = "";
+                            OverallSleepScore.Text = " ";
                         else
                             OverallSleepScore.Text = $"{jsonObject.OverallSleepScore}";
                         // 檢查 SleepQuality

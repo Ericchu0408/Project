@@ -8,7 +8,7 @@
 
     <Shell.TitleView>
         <Grid VerticalOptions="StartAndExpand" Padding="0,5,0,0" >
-            <Label Text="伺服器設定"
+            <Label Text="帳號安全"
            FontSize="24"  
            FontAttributes="Bold"
            HorizontalOptions="Center"
@@ -21,8 +21,8 @@
 
     <VerticalStackLayout >
         <!-- 標題 -->
-        <Label Text="伺服器位置"
-               FontSize="25" Margin="16" FontAttributes="Bold" />
+        <Label Text="綁定帳號"
+               FontSize="22" Margin="16" FontAttributes="Bold" />
 
         <!-- 帳號區塊 -->
         <Frame BackgroundColor="#E9ECF1"
@@ -30,7 +30,9 @@
                Padding="16">
             <VerticalStackLayout Spacing="5">
                 <Label Text="設置"
-                       FontSize="Large"
+                       Padding="10"
+                       WidthRequest="270"
+                       FontSize="25"
                        FontAttributes="Bold"
                        HorizontalOptions="Start" />
                 <Entry x:Name="SeverPlace" 
@@ -40,11 +42,14 @@
         <Label HeightRequest="15" />
 
         <StackLayout Padding="20">
-             <!-- Button -->
+            <!-- Button -->
             <Button Text="確定" 
-                    Clicked="OnButtonClicked"/>  
+                    Clicked="OnButtonClicked"
+                    CornerRadius="40"
+                    HeightRequest="50"
+                    WidthRequest="150"
+                    BackgroundColor="#E6191970"/>
         </StackLayout>
-        
 
     </VerticalStackLayout>
 

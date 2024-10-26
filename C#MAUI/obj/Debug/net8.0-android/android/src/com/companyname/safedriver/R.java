@@ -11994,17 +11994,26 @@ public final class R {
     public static final int notification_template_icon_low_bg=0x7f08013c;
     public static final int notification_tile_bg=0x7f08013d;
     public static final int notify_panel_notification_icon_bg=0x7f08013e;
-    public static final int profile=0x7f08013f;
-    public static final int profile1=0x7f080140;
-    public static final int settings=0x7f080141;
-    public static final int sleep=0x7f080142;
-    public static final int splash=0x7f080143;
-    public static final int stresslevel=0x7f080144;
-    public static final int test_level_drawable=0x7f080145;
-    public static final int today=0x7f080146;
-    public static final int tooltip_frame_dark=0x7f080147;
-    public static final int tooltip_frame_light=0x7f080148;
-    public static final int watch=0x7f080149;
+    public static final int p1=0x7f08013f;
+    public static final int p2=0x7f080140;
+    public static final int p3=0x7f080141;
+    public static final int p4=0x7f080142;
+    public static final int profile=0x7f080143;
+    public static final int profile1=0x7f080144;
+    public static final int profileicon=0x7f080145;
+    public static final int road=0x7f080146;
+    public static final int road1=0x7f080147;
+    public static final int road2=0x7f080148;
+    public static final int road3=0x7f080149;
+    public static final int settings=0x7f08014a;
+    public static final int sleep=0x7f08014b;
+    public static final int splash=0x7f08014c;
+    public static final int stresslevel=0x7f08014d;
+    public static final int test_level_drawable=0x7f08014e;
+    public static final int today=0x7f08014f;
+    public static final int tooltip_frame_dark=0x7f080150;
+    public static final int tooltip_frame_light=0x7f080151;
+    public static final int watch=0x7f080152;
   }
   public static final class font {
     public static final int roboto_medium_numbers=0x7f090000;
