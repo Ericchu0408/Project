@@ -12,7 +12,7 @@ import requests
 import base64
 
 # 全局变量来存储时间
-URL=f"http://192.168.1.132/DrowsyDrivingService/DDService.ashx?Action="
+URL=f"http://172.20.10.3/DrowsyDrivingService/DDService.ashx?Action="
 elapsed_time_str = ""
 hour = 0
 minute = 0
@@ -185,10 +185,10 @@ def check_detect_flag():
 check_detect_flag()
 
 # 設置閾值
-EYE_EAR_THRESH = 0.24
-EYE_CONSEC_FRAMES = 3
-MOUTH_MAR_THRESH = 0.78
-MOUTH_CONSEC_FRAMES = 3
+EYE_EAR_THRESH = 0.22
+EYE_CONSEC_FRAMES = 1.5
+MOUTH_MAR_THRESH = 0.74
+MOUTH_CONSEC_FRAMES = 1.5
 
 # 初始化计数器
 ECOUNTER, ETOTAL = 0, 0
@@ -209,12 +209,13 @@ FACIAL_LANDMARK_68_IDXS = OrderedDict([
 
 print("[INFO] starting video stream...")
 vs = cv2.VideoCapture(0)  # 0是电脑镜头
-time.sleep(1.0)
+time.sleep(1)
 
 # 创建和启动计时器线程
 timer_thread = threading.Thread(target=time_start)
 timer_thread.daemon = True  # 设置为守护线程，这样主程序退出时线程也会自动退出
 timer_thread.start()
+
 
 # 处理视频流
 process_video_stream(vs, detector, predictor, lStart, lEnd, rStart, rEnd, mStart, mEnd)
