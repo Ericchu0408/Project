@@ -13,6 +13,7 @@ using System.IO;
 using System.Reflection;
 using MediaManager;
 using System.ComponentModel;
+using Android.Service.Notification;
 
 namespace SafeDriver
 {
@@ -47,6 +48,31 @@ namespace SafeDriver
                 StartTimer();
             }
            
+        }
+        // 每次頁面顯示時重新載入 Profile 資料
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            LoadProfileData();  // 重新載入暱稱和圖片資料
+        }
+
+        // 載入 Profile 資料（暱稱和頭像）
+        private void LoadProfileData()
+        {
+            try
+            {
+                // 從 Preferences 中取得暱稱和頭像資料
+                string nickname = Preferences.Get("Nickname", "使用者");
+                string profileImage = Preferences.Get("ProfileImage", "profile.png");
+
+                // 更新 UI
+                NicknameLabel.Text = nickname;
+                ProfileImage.Source = profileImage;
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("錯誤", $"載入資料時發生錯誤：{ex.Message}", "確定");
+            }
         }
         public async Task ReadUrlFromSeverFileAsync()
         {
@@ -115,6 +141,11 @@ namespace SafeDriver
             await Dispatcher.DispatchAsync(async () =>
             {
 
+                // 檢查開關是否開啟，如果開關關閉則不執行任何操作///新加入的
+                if (!AppState.IsRecognitionSwitchOn)
+                {
+                    return;
+                }
 
                 if (await CheckCondition()) // 如果條件達標
                 {
@@ -310,26 +341,59 @@ namespace SafeDriver
                         byte[] data = Convert.FromBase64String(responseBody);
                         string json = System.Text.Encoding.UTF8.GetString(data);
                         GarminData jsonObject = JsonConvert.DeserializeObject<GarminData>(json);
-                        // 檢查 OverallSleepScore
-                        if (string.IsNullOrEmpty(jsonObject.OverallSleepScore))
+                        if(jsonObject.StressLevel== null)
+                        {
+                            condition.Text = "無資料";
                             OverallSleepScore.Text = " ";
-                        else
-                            OverallSleepScore.Text = $"{jsonObject.OverallSleepScore}";
-                        // 檢查 SleepQuality
-                        if (string.IsNullOrEmpty(jsonObject.SleepQuality))
-                            sleepquality.Text = "";
-                        else
-                            sleepquality.Text = $"{jsonObject.SleepQuality.Substring(jsonObject.SleepQuality.Length - 2)}";
-                        // 檢查 AverageHeartRate
-                        if (string.IsNullOrEmpty(jsonObject.AverageHeartRate))
-                            AverageHeartRate.Text = "";
-                        else
-                            AverageHeartRate.Text = $"{jsonObject.AverageHeartRate}";
-                        // 檢查 StressLevel
-                        if (string.IsNullOrEmpty(jsonObject.StressLevel))
-                            stresslevel.Text = "";
-                        else
-                            stresslevel.Text = $"{jsonObject.StressLevel.Substring(jsonObject.StressLevel.Length - 1)}";
+                            sleepquality.Text = " ";
+                            AverageHeartRate.Text = " ";
+                            stresslevel.Text = " ";
+                            return;
+                        }
+
+                        if(int.Parse(jsonObject.OverallSleepScore) < 60|| jsonObject.StressLevel.Substring(jsonObject.StressLevel.Length - 1) == "高")
+                        {
+                            condition.Text = "健康狀況不佳，請先休息再上路";
+                            condition.FontSize = 20;
+                        }
+                        else 
+                        {
+                            if ((int.Parse(jsonObject.OverallSleepScore) >= 60 && int.Parse(jsonObject.OverallSleepScore) < 70 )&& jsonObject.StressLevel.Substring(jsonObject.StressLevel.Length - 1) == "中")
+                            {
+                                condition.Text = "健康狀況不佳，請注意行車時間";
+                                condition.FontSize = 20;
+                            }
+                            else if((int.Parse(jsonObject.OverallSleepScore) >= 70 && int.Parse(jsonObject.OverallSleepScore) < 100) && jsonObject.StressLevel.Substring(jsonObject.StressLevel.Length - 1) == "中")
+                            {
+                                condition.Text = "壓力等級較高，請注意行車時間";
+                                condition.FontSize = 20;
+                            }
+                            else if ((int.Parse(jsonObject.OverallSleepScore) >= 60 && int.Parse(jsonObject.OverallSleepScore) < 70 )&& jsonObject.StressLevel.Substring(jsonObject.StressLevel.Length - 1) == "低")
+                            {
+                                condition.Text = "睡眠狀況不佳，請注意行車時間";
+                                condition.FontSize =20;
+                            }
+                            else if((int.Parse(jsonObject.OverallSleepScore) >= 70 && int.Parse(jsonObject.OverallSleepScore) < 100) && jsonObject.StressLevel.Substring(jsonObject.StressLevel.Length - 1) == "低")
+                            {
+                                condition.Text = "健康狀況優良，安心上路";
+                            }
+                            else
+                            {
+                                condition.Text = "無資料";
+                                OverallSleepScore.Text = " ";
+                                sleepquality.Text = " ";
+                                AverageHeartRate.Text = " ";
+                                stresslevel.Text = " ";
+                                return;
+                            }
+
+
+                        }
+
+                        OverallSleepScore.Text = $"{jsonObject.OverallSleepScore}";
+                        sleepquality.Text = $"{jsonObject.SleepQuality.Substring(jsonObject.SleepQuality.Length - 2)}";
+                        AverageHeartRate.Text = $"{jsonObject.AverageHeartRate}";
+                        stresslevel.Text = $"{jsonObject.StressLevel.Substring(jsonObject.StressLevel.Length - 1)}";
                     }
                     catch (FormatException)
                     {

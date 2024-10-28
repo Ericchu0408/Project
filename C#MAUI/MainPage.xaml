@@ -52,12 +52,12 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Label Text="今日狀態" TextColor="White" FontSize="20" FontAttributes="Bold" Margin="5,0,0,0" >
+                        <Label Text="今日狀態"  TextColor="White" FontSize="20" FontAttributes="Bold" Margin="5,0,0,0" >
                             <Label.Shadow>
                                 <Shadow Brush="Black" Opacity="1.5" />
                             </Label.Shadow>
                         </Label>
-                        <Label Text="健康狀況優良，安心上路" Grid.Row="1" VerticalOptions="Center" Margin="0,10,0,0" 
+                        <Label Text="健康狀況優良，安心上路" x:Name ="condition" Grid.Row="1" VerticalOptions="Center" Margin="0,10,0,0" 
                        HorizontalOptions="Center" TextColor="White" FontSize="24" FontAttributes="Bold">
                             <Label.Shadow>
                                 <Shadow Brush="Black" Opacity="1.5" />
@@ -74,7 +74,7 @@
             <Frame HeightRequest="100" WidthRequest="350" CornerRadius="15" Margin="13,20" Padding="0" BackgroundColor="#FFFFFF" HorizontalOptions="FillAndExpand">
                 <Grid>
                     <Image Source="backg.png" Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-                    <Label x:Name="OverallSleepScore" Text="80" FontSize="28" FontAttributes="Bold" 
+                    <Label x:Name="OverallSleepScore" Text="null" FontSize="28" FontAttributes="Bold" 
                    HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,69,0" TextColor="Green" />
                     <!-- 睡眠分數標題 -->
                     <Label Text="睡眠分數" FontSize="28" FontAttributes="Bold" TextColor="White" 

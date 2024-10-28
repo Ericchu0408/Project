@@ -36,12 +36,19 @@ public partial class TabPageNotification : ContentPage
 
 
     }
+    // 導航到設定頁面的按鈕點擊事件
     private async void OnSettingsButtonClicked(object sender, EventArgs e)
     {
-        // ¾É¯è¨ì Settings
-        //await _navigation.PushAsync(new Settings());
-        Navigation.PushAsync(new Settings());
-        //Shell.Current.CurrentPage=
+        try
+        {
+            // 使用 PushAsync 進行導航
+            await Navigation.PushAsync(new NotificationSettings());
+        }
+        catch (Exception ex)
+        {
+            // 錯誤處理：顯示錯誤訊息
+            await DisplayAlert("錯誤", $"無法導航至通知設定頁面：{ex.Message}", "確定");
+        }
     }
     public async void GetDetectData()
     {

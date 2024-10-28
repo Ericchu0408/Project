@@ -31,6 +31,8 @@ public partial class TabPageProfiles : ContentPage
             {
                 ProfileImage.Source = selectedImage;  // 更新頭像圖片
                 Preferences.Set("ProfileImage", selectedImage);  // 儲存圖片路徑
+                //MainPage.ProfileImage.Source = selectedImage;
+                
             }
         }));
     }

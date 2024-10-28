@@ -23,7 +23,7 @@
 
         <!-- 標題 -->
         <Label Text="請開啟通知"
-               FontSize="30" Margin="16" FontAttributes="Bold" />
+               FontSize="22" Margin="16" FontAttributes="Bold" />
         <!-- 通知設定 -->
         <Frame BackgroundColor="#E9ECF1" 
                CornerRadius="12"
@@ -33,11 +33,11 @@
 
 
 
-            <HorizontalStackLayout Spacing="150" Padding="10,0">
+            <HorizontalStackLayout Spacing="175" Padding="15,0">
                 <!-- 通知標籤 -->
                 <Label Text="警告通知" 
                    FontAttributes="Bold"
-                   FontSize="Large" 
+                   FontSize="18" 
                    VerticalOptions="Center" 
                    HorizontalOptions="StartAndExpand" />
 
